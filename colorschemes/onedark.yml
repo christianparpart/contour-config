@@ -1,0 +1,62 @@
+# background_image:
+#     path: '/home/christianparpart/Pictures/Wallpaper.disabled/POR_8635.jpg'
+#     blur: true
+#     opacity: 1.0
+
+# Mandates the color of the cursor.
+cursor:
+    #default: '#7070f0'
+    default: CellForeground
+    text: CellBackground
+# The text selection color can be customized here.
+selection:
+    foreground: CellForeground
+    foreground_alpha: 1.0
+    background: '#3D62F5'
+    background_alpha: 0.5
+# Opacity to draw the selection color over the existing screen cell(s).
+hyperlink_decoration:
+    normal: '#f0f0c0'
+    hover: '#ff0000'
+# Default colors
+default:
+    # Default background color (this can be made transparent, see above).
+    #background: '#1d1f21'
+    #background: '#594731'
+    background: '#101010'
+    # Default foreground text color.
+    foreground: '#d5d8d6'
+search_highlight:
+    foreground: CellForeground
+    #foreground: '#0000FF'
+    background: '#FFFFFF'
+    foreground_alpha: 1.0
+    background_alpha: 0.5
+indicator_statusline:
+    foreground: '#FFFFFF'
+    background: '#0270c0'
+# Normal colors
+normal:
+    black:   '#000000'
+    red:     '#f00000'
+    green:   '#29a329'
+    yellow:  '#c3c322'
+    blue:    '#3d62f5'
+    magenta: '#ad2bee'
+    cyan:    '#1999b3'
+    white:   '#8ca68c'
+# Bright colors
+bright:
+    black:   '#505050'
+    red:     '#f6193c'
+    green:   '#29a329'
+    yellow:  '#c3c322'
+    blue:    '#3d62f5'
+    magenta: '#ad2bee'
+    cyan:    '#1999b3'
+    white:   '#f0fff0'
+vi_mode_cursorline:
+    foreground: '#ffffff'
+    foreground_alpha: 0.2
+    background: '#808080'
+    background_alpha: 0.4

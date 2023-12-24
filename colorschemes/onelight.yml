@@ -1,0 +1,51 @@
+default:
+    background: "#faf4e5"
+    foreground: "#6a6a6a"
+
+normal:
+    black: "#6a6a6a"
+    red: "#e05661"
+    green: "#1da912"
+    yellow: "#eea825"
+    blue: "#118dc3"
+    magenta: "#9a77cf"
+    cyan: "#56B6C2"
+    white: "#808080"
+
+bright:
+    black: "#bebebe"
+    red: "#ed6c72"
+    green: "#63cc41"
+    yellow: "#f4b74b"
+    blue: "#4ea6e3"
+    magenta: "#b08fee"
+    cyan: "#85d7e5"
+    white: "#000000"
+
+cursor:
+    default: CellForeground
+    text: CellBackground
+
+selection:
+    foreground: CellForeground
+    foreground_alpha: 1.0
+    background: "#bfceff" # syntax-selection-color
+    background_alpha: 0.5
+
+vi_mode_cursorline:
+    foreground: '#FFFFFF'
+    foreground_alpha: 0.2
+    background: '#c0c080'
+    background_alpha: 0.3
+
+indicator_statusline:
+    foreground: '#FFFFFF'
+    background: '#FFAA00'
+    #background: '#FFCCBB'
+
+search_highlight:
+    foreground: CellForeground
+    #foreground: '#0000FF'
+    background: '#FFFFFF'
+    foreground_alpha: 1.0
+    background_alpha: 0.5
