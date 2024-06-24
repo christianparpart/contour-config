@@ -67,7 +67,7 @@ default_profile: main
 
 # Flag to determine whether to spawn new process or not when creating new terminal
 # Default: false
-spawn_new_process: true
+spawn_new_process: false
 
 # Whether or not to reflow the lines on terminal resize events.
 # Default: true
@@ -117,7 +117,7 @@ on_mouse_select: CopyToSelectionClipboard
 # Determines whether the instance is reloading the configuration files whenever it is changing or not.
 #
 # Default: false
-live_config: false
+live_config: true
 
 # Inline image related default configuration and limits
 # -----------------------------------------------------
@@ -138,6 +138,9 @@ images:
 profiles:
     main:
         option_as_alt: false
+        margins:
+            horizontal: 5
+            vertical: 0
         slow_scrolling_time: 1000
         # You can override the process to be started inside the terminal.
         # If nothing is specified, the users' default login shell will be used.
@@ -608,3 +611,8 @@ input_mapping:
     - { mods: [Control, Meta],  key: 'N',   mode: "Trace", action: TraceStep }
     - { mods: [Control, Meta],  key: 'F',   mode: "Trace", action: TraceBreakAtEmptyQueue }
     - { mods: [Control, Alt],   key: 'P',           action: ToggleInputProtection }
+
+    # MacOS/X
+    - { mods: [Command],        key: C,             action: CopySelection } #, mode: 'Select|Insert' }
+    - { mods: [Command],        key: C,             action: CancelSelection } #, mode: 'Select|Insert' }
+    - { mods: [Command],        key: V,             action: PasteClipboard } #, strip: false }
