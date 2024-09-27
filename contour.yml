@@ -183,7 +183,7 @@ profiles:
         maximized: false
 
         # Defines the class part of the WM_CLASS property of the window.
-        wm_class: "contour"
+        #wm_class: ""
 
         # Environment variables to be passed to the shell.
         # environment:
@@ -372,6 +372,10 @@ profiles:
             # This only reflects the initial state of the status line, as it can
             # be changed at any time during runtime by the user or by an application.
             display: indicator
+            # indicator:
+            #     left: "{VTType} │ {InputMode:Bold,Color=#C0C030}{SearchPrompt:Left= │ }{TraceMode:Bold,Color=#FFFF00,Left= │ }{ProtectedMode:Bold,Left= │ }"
+            #     middle: "« {Title} »"
+            #     right: "{HistoryLineCount:Faint,Color=#c0c0c0} │ {Clock:Bold} "
 
         # Background configuration
         background:
@@ -382,7 +386,8 @@ profiles:
             blur: true
 
         # Specifies a colorscheme to use (alternatively the colors can be inlined).
-        #colors: "default"
+        #colors: onelight
+        #colors: onedark
         colors:
           dark: onedark
           light: onelight
