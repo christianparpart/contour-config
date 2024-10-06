@@ -617,6 +617,20 @@ input_mapping:
     - { mods: [Control, Meta],  key: 'F',   mode: "Trace", action: TraceBreakAtEmptyQueue }
     - { mods: [Control, Alt],   key: 'P',           action: ToggleInputProtection }
 
+    - { mods: [Alt],            key: '.',           action: CreateNewTab }
+    - { mods: [Alt],            key: '[',           action: SwitchToTabLeft }
+    - { mods: [Alt],            key: ']',           action: SwitchToTabRight }
+    - { mods: [Alt],            key: 1,             action: SwitchToTab, position: 1 }
+    - { mods: [Alt],            key: 2,             action: SwitchToTab, position: 2 }
+    - { mods: [Alt],            key: 3,             action: SwitchToTab, position: 3 }
+    - { mods: [Alt],            key: 4,             action: SwitchToTab, position: 4 }
+    - { mods: [Alt],            key: 5,             action: SwitchToTab, position: 5 }
+    - { mods: [Alt],            key: 6,             action: SwitchToTab, position: 6 }
+    - { mods: [Alt],            key: 7,             action: SwitchToTab, position: 7 }
+    - { mods: [Alt],            key: 8,             action: SwitchToTab, position: 8 }
+    - { mods: [Alt],            key: 9,             action: SwitchToTab, position: 9 }
+    - { mods: [Alt],            key: 0,             action: SwitchToTab, position: 10 }
+
     # MacOS/X
     - { mods: [Command],        key: C,             action: CopySelection } #, mode: 'Select|Insert' }
     - { mods: [Command],        key: C,             action: CancelSelection } #, mode: 'Select|Insert' }
