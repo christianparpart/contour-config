@@ -248,7 +248,7 @@ profiles:
         # Font related configuration (font face, styles, size, rendering mode).
         font:
             # Initial font size in pixels.
-            size: 12
+            size: 11
 
             # DPI scaling factor applied on top of the system configured on (default: 1.0).
             dpi_scale: 1.0
@@ -618,8 +618,11 @@ input_mapping:
     - { mods: [Control, Alt],   key: 'P',           action: ToggleInputProtection }
 
     - { mods: [Alt],            key: '.',           action: CreateNewTab }
+    - { mods: [Alt],            key: ',',           action: SwitchToPreviousTab }
     - { mods: [Alt],            key: '[',           action: SwitchToTabLeft }
     - { mods: [Alt],            key: ']',           action: SwitchToTabRight }
+    - { mods: [Alt, Shift],     key: '{',           action: MoveTabToLeft }
+    - { mods: [Alt, Shift],     key: '}',           action: MoveTabToRight }
     - { mods: [Alt],            key: 1,             action: SwitchToTab, position: 1 }
     - { mods: [Alt],            key: 2,             action: SwitchToTab, position: 2 }
     - { mods: [Alt],            key: 3,             action: SwitchToTab, position: 3 }
