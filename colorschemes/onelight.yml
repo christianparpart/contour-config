@@ -1,7 +1,7 @@
 default:
     background: "#faf4e5"
     foreground: "#6a6a6a"
-    bright_foreground: '#000000'
+    bright_foreground: '#00c0c0'
     dimmed_foreground: '#505050'
 
 normal:
