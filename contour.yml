@@ -136,7 +136,17 @@ images:
 #
 # Dominates how your terminal visually looks like. You will need at least one terminal profile.
 profiles:
+    ssh-localhost:
+        ssh:
+            host: localhost
+            port: 22
+            user: christianparpart
+            forward_agent: true
+            known_hosts: "~/.ssh/known_hosts"
     main:
+        blink_style: smooth
+        screen_transition: fade
+        screen_transition_duration: 250
         option_as_alt: false
         margins:
             horizontal: 5
@@ -147,6 +157,7 @@ profiles:
         # But you may as well log in to a remote host.
         # shell: "ssh ubuntu-vm"
         # shell: "/bin/bash"
+        # shell: "/home/christianparpart/projects/endo/build/clang-debug/src/shell/endo"
         # arguments: ["some", "optional", "arguments", "for", "the", "shell"]
 
         # If this terminal is being executed from within Flatpak, enforces sandboxing
@@ -213,9 +224,9 @@ profiles:
 
         history:
             # Number of lines to preserve (-1 for infinite).
-            limit: 80000
+            limit: 500000
             # Boolean indicating whether or not to scroll down to the bottom on screen updates.
-            auto_scroll_on_update: true
+            auto_scroll_on_update: false
             # Number of lines to scroll on ScrollUp & ScrollDown events.
             # Default: 3
             scroll_multiplier: 1
@@ -373,7 +384,7 @@ profiles:
             # be changed at any time during runtime by the user or by an application.
             display: indicator
             # indicator:
-            #     left: "{VTType} │ {InputMode:Bold,Color=#C0C030}{SearchPrompt:Left= │ }{TraceMode:Bold,Color=#FFFF00,Left= │ }{ProtectedMode:Bold,Left= │ }"
+            #     left: " {InputMode:Bold,Color=#FFFF00}{Tabs:ActiveColor=#FFFF00,Bold,Left= │ }{SearchPrompt:Left= │ }{TraceMode:Bold,Color=#FFFF00,Left= │ }{ProtectedMode:Bold,Left= │ }"
             #     middle: "« {Title} »"
             #     right: "{HistoryLineCount:Faint,Color=#c0c0c0} │ {Clock:Bold} "
 
@@ -381,16 +392,16 @@ profiles:
         background:
             # Background opacity to use. A value of 1.0 means fully opaque whereas 0.0 means fully
             # transparent. Only values between 0.0 and 1.0 are allowed.
-            opacity: 1.0 # 0.75
+            opacity: 1.0 # 1.0 # 0.9
             # Some platforms can blur the transparent background (currently only Windows 10 is supported).
-            blur: true
+            blur: false
 
         # Specifies a colorscheme to use (alternatively the colors can be inlined).
-        #colors: onelight
-        #colors: onedark
-        colors:
-          dark: onedark
-          light: onelight
+        colors: onedark
+        # colors: onelight
+        # colors:
+        #   dark: onedark
+        #   light: onelight
 
         # If true, bold text is also using bright colors as well.
         #
@@ -567,6 +578,9 @@ color_schemes:
 # - WriteScreen       Writes VT sequence in `chars` member to the screen (bypassing the application).
 
 input_mapping:
+    # only for claude-code
+    - { mods: [Shift],          key: Enter,         action: SendChars, chars: "\x1b\r" }
+
     - { mods: [Control],        mouse: Left,        action: FollowHyperlink }
     - { mods: [],               mouse: Middle,      action: PasteSelection }
     - { mods: [],               mouse: WheelDown,   action: ScrollDown }
@@ -595,12 +609,12 @@ input_mapping:
     - { mods: [Control, Shift], key: Q,             action: Quit }
     - { mods: [Meta],           mouse: WheelUp,     action: DecreaseFontSize }
     - { mods: [Meta],           mouse: WheelDown,   action: IncreaseFontSize }
-    - { mods: [Shift],          key: DownArrow,     action: ScrollOneDown }
+    #- { mods: [Shift],          key: DownArrow,     action: ScrollOneDown }
     - { mods: [Shift],          key: End,           action: ScrollToBottom }
     - { mods: [Shift],          key: Home,          action: ScrollToTop }
     - { mods: [Shift],          key: PageDown,      action: ScrollPageDown }
     - { mods: [Shift],          key: PageUp,        action: ScrollPageUp }
-    - { mods: [Shift],          key: UpArrow,       action: ScrollOneUp }
+    #- { mods: [Shift],          key: UpArrow,       action: ScrollOneUp }
     - { mods: [Control, Alt],   key: K,             action: ScrollMarkUp,   mode: "~Alt"}
     - { mods: [Control, Alt],   key: J,             action: ScrollMarkDown, mode: "~Alt"}
     - { mods: [Shift],          mouse: WheelDown,   action: ScrollPageDown }
@@ -633,6 +647,16 @@ input_mapping:
     - { mods: [Alt],            key: 8,             action: SwitchToTab, position: 8 }
     - { mods: [Alt],            key: 9,             action: SwitchToTab, position: 9 }
     - { mods: [Alt],            key: 0,             action: SwitchToTab, position: 10 }
+    - { mods: [Alt, Shift],     key: '!',           action: MoveTabTo, position: 1 }
+    - { mods: [Alt, Shift],     key: '@',           action: MoveTabTo, position: 2 }
+    - { mods: [Alt, Shift],     key: '#',           action: MoveTabTo, position: 3 }
+    - { mods: [Alt, Shift],     key: '$',           action: MoveTabTo, position: 4 }
+    - { mods: [Alt, Shift],     key: '%',           action: MoveTabTo, position: 5 }
+    - { mods: [Alt, Shift],     key: '^',           action: MoveTabTo, position: 6 }
+    - { mods: [Alt, Shift],     key: '&',           action: MoveTabTo, position: 7 }
+    - { mods: [Alt, Shift],     key: '*',           action: MoveTabTo, position: 8 }
+    - { mods: [Alt, Shift],     key: '(',           action: MoveTabTo, position: 9 }
+    - { mods: [Alt, Shift],     key: ')',           action: MoveTabTo, position: 10 }
 
     # MacOS/X
     - { mods: [Command],        key: C,             action: CopySelection } #, mode: 'Select|Insert' }
